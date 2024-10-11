@@ -1,18 +1,14 @@
-import "package:flutter/material.dart";
-import "package:flutter_test/flutter_test.dart";
-import "package:flutterdemo/main.dart";
+/************************************************************分割线************************************************************/
 
 void main() {
-  testWidgets("Counter increments smoke test", (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
-
-    expect(find.text("0"), findsOneWidget);
-    expect(find.text("1"), findsNothing);
-
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    expect(find.text("0"), findsNothing);
-    expect(find.text("1"), findsOneWidget);
-  });
+  print("main");
 }
+
+/************************************************************半分割线******************************/
+/* todo 使用离线依赖 */
+
+// import "package:packagedemo/packagedemo.dart";
+//
+// void main() {
+//   print(test());
+// }

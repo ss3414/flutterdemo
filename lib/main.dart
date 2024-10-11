@@ -1,9 +1,15 @@
 import "package:flutter/material.dart";
+import "package:fluttertoast/fluttertoast.dart";
 
+/* 应用入口 */
 void main() {
   runApp(const MyApp());
 }
 
+/*
+* ①继承StatelessWidget代表应用本身是个Widget
+* ②Flutter中大多数组件都是Widget
+* */
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -12,57 +18,62 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter Demo",
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: "Flutter Demo Home Page"),
+      /* 首页路由 */
+      home: HomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
+class HomePage extends StatelessWidget {
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  Widget build(BuildContext context) {
+    /* Scaffold：material中的页面脚手架 */
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("HomePage"),
+      ),
+      /* Center组件居中 */
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            /* 页面跳转 */
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DemoPage()),
+            );
+          },
+          child: Text("DemoPage"),
+        ),
+      ),
+    );
+  }
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class DemoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text("DemoPage"),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              "You have pushed the button this many times:",
-            ),
-            Text(
-              "$_counter",
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+        child: ElevatedButton(
+          onPressed: () {
+            /* Toast提示 */
+            Fluttertoast.showToast(
+              msg: "Toast",
+              toastLength: Toast.LENGTH_SHORT,
+              gravity: ToastGravity.BOTTOM,
+              timeInSecForIosWeb: 1,
+              backgroundColor: Colors.black,
+              textColor: Colors.white,
+              fontSize: 16.0,
+            );
+          },
+          child: Text("Button"),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: "Increment",
-        child: const Icon(Icons.add),
       ),
     );
   }
