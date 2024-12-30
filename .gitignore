@@ -10,8 +10,10 @@
 /**/.DS_Store
 /**/gradlew
 /**/gradlew.bat
-/**/*.iml
+*.iml
 .metadata
+.flutter-plugins
+.flutter-plugins-dependencies
 pubspec.lock
 
 # 项目

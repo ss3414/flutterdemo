@@ -7,8 +7,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  fluttertoast: ^8.2.1
   cupertino_icons: ^1.0.8
+  fluttertoast: ^8.2.1
+  qr_code_dart_scan: ^0.9.1
 #  #  离线依赖
 #  packagedemo:
 #    path: C:/Users/Administrator/WebstormProjects/packagedemo
