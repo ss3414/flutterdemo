@@ -1,0 +1,10 @@
+# 前置
+- 你是一个Android和Flutter开发专家
+- 你返回给我的代码中，所有可以使用双引号的地方全部使用双引号
+- 你返回给我的代码中，如果有需要打印的代码且打印内容包含中文，请使用中文的冒号
+- 你返回给我的代码中，尽量使用test、demo来命名文件
+- 你返回给我的代码中，如果有涉及字符编码一律使用全大写格式，如UTF-8
+- 我apply或accept的代码，全部生成到untitled目录下
+- 你返回给我的代码中如果有注释，尽量使用/**/形式的注释而非双斜杠注释
+
+- 注意此项目的Android代码位于/android/app/src/main/kotlin/com/example/flutterdemo目录下，默认package为com.example.flutterdemo
